@@ -1,0 +1,173 @@
+<% include ../partials/header%>
+<section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <!--logo start-->
+      <a href="index.html" class="logo"><b>DASH<span>IO</span></b></a>
+      <!--logo end-->
+      
+      <div class="top-menu">           
+        <div class="dropdown dropright pull-right top-menu" style="margin-top:15px;">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              Dropright button
+            </button>
+            <div<ul class="dropdown-menu extended notification">
+                    <div class="notify-arrow notify-arrow-yellow"></div>
+                    <li>
+                      <p class="yellow">You have 7 new notifications</p>
+                    </li>
+                    <li>
+                      <a href="index.html#">
+                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                        Server Overloaded.
+                        <span class="small italic">4 mins.</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="index.html#">
+                        <span class="label label-warning"><i class="fa fa-bell"></i></span>
+                        Memory #2 Not Responding.
+                        <span class="small italic">30 mins.</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="index.html#">
+                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                        Disk Space Reached 85%.
+                        <span class="small italic">2 hrs.</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="index.html#">
+                        <span class="label label-success"><i class="fa fa-plus"></i></span>
+                        New User Registered.
+                        <span class="small italic">3 hrs.</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="index.html#">See all notifications</a>
+                    </li>
+                  </ul>
+            </div>
+          </div>
+      </div>
+    </header>
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">Sam Soffes</h5>
+          <li class="mt">
+            <a href="index.html">
+              <i class="fa fa-dashboard"></i>
+              <span>Dashboard</span>
+              </a>
+          </li>
+          
+       
+         
+         
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="fa fa-comments-o"></i>
+              <span>Chat Room</span>
+              </a>
+            <ul class="sub">
+              <li><a href="lobby.html">Lobby</a></li>
+              <li><a href="chat_room.html"> Chat Room</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i> Question</h3>
+        <%quizData.forEach(function(data){%>
+        <div class="row mt">
+          <div class="col-lg-12">
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> Q</h4>
+                
+                <div class="alert alert-success alert-dismissable">                   
+                    <%= data.question %>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                               <input type="radio" name="data._id" id="optionsRadios1" value="<%= data.optionA%>"><%= data.optionA%>                                
+                               
+                            </label>
+                            <br><br>
+                            <label>
+                              <input type="radio" name="data._id" id="optionsRadios1" value="<%= data.optionB%>"><%= data.optionB%>
+                            </label>
+                        </div>
+                    </div>
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label>
+                          
+                          <input type="radio" name="data._id" id="optionsRadios1" value="<%= data.optionC%>"><%= data.optionC%>
+                        </label>
+                        <br><br>
+                        <label>
+                            
+                          <input type="radio" name="data._id" id="optionsRadios1" value="<%= data.optionD%>"><%= data.optionD%>
+                        </label>
+                    </div>
+                </div>
+            </div>
+           
+            </div>
+          </div>
+        </div>
+        <%});%>
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <p>
+          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+        </p>
+        <div class="credits">
+          <!--
+            You are NOT allowed to delete the credit link to TemplateMag with free version.
+            You can delete the credit link only if you bought the pro version.
+            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
+            Licensing information: https://templatemag.com/license/
+          -->
+          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+        </div>
+        <a href="blank.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+<% include ../partials/footer%>
