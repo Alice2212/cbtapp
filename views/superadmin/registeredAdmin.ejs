@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+
+<table class="table">
+    <thead class="thead-dark">
+        <!-- to create table header -->
+      <tr>
+        <th scope="col">s/n</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">ConfirmPassword</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <!-- looping through the Regitered admin table -->
+
+      <%
+      let num = 1;
+      Admindata.forEach(function(Admin){%>
+      <tr>
+        <th scope="row"><%= num %></th>
+        <td><%=Admin.firstname%></td>
+        <td><%=Admin.lastname%></td>
+        <td><%=Admin.username%></td>
+        <td><a href="#"><%=Admin.email%></a></td>
+        <td><%=Admin.password%></td>
+        <td><%=Admin.confirm_password%></td>
+        <!-- <td><a href="#"><%=Admin.email%></a></td> -->
+        <td><a href="/superadmin/registeredAdmin/remove/<%=Admin._id%>" class="btn btn-primary">delete</a> <a href="/superadmin/registeredAdmin/edit/<%=Admin._id%>"  class="btn btn-primary">update</a></td> 
+        
+      </tr>
+      <% num = num+1;%>
+      <%});%>
+     
+    </tbody>
+  </table>
+
+  <% include ../partials/footer %>
